@@ -39,6 +39,8 @@ if __name__ == '__main__':
 
     n_components = n_row * n_col
     image_shape = (64, 64)
+    import ssl
+    ssl._create_default_https_context = ssl._create_unverified_context
     dataset = fetch_olivetti_faces(shuffle=True,random_state=RandomState(0))
     faces = dataset.data  # 加载数据，并打乱顺序
 
